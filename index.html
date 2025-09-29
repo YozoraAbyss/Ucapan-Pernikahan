@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ucapan Pernikahan 💍</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+   <div class="card">
+    <!-- Marquee -->
+    <div class="marquee-box">
+      <span class="marquee-text">💍 Selamat untuk pasangan bahagia! Semoga cinta kalian abadi, penuh berkah, dan kebahagiaan yang tak terhingga 💕</span>
+    </div>
+
+    <h1>Selamat Menempuh Hidup Baru 💖</h1>
+    <p>Semoga pernikahanmu dipenuhi dengan cinta, kebahagiaan, dan berkah yang tak terhingga.</p>
+    
+    <button onclick="celebrate()">🎉 Rayakan</button>
+    <button onclick="openPopup()">💌 Lihat Pesan</button>
+
+    <!-- Galeri -->
+    <div class="gallery" id="gallery">
+      <img src="https://picsum.photos/600/400?random=1" alt="Foto pasangan 1" onclick="openLightbox(0)">
+      <img src="https://picsum.photos/600/400?random=2" alt="Foto pasangan 2" onclick="openLightbox(1)">
+      <img src="https://picsum.photos/600/400?random=3" alt="Foto pasangan 3" onclick="openLightbox(2)">
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">❌</span>
+    <span class="nav prev" onclick="changeSlide(-1)">&#10094;</span>
+    <img id="lightbox-img" src="">
+    <span class="nav next" onclick="changeSlide(1)">&#10095;</span>
+  </div>
+
+  <!-- Popup pesan -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">❌</span>
+      <p>"Pernikahan adalah awal dari kisah cinta abadi.<br>
+      Semoga kalian berdua saling melengkapi,<br>
+      saling menguatkan, dan tumbuh bersama<br>
+      dalam kebahagiaan tanpa akhir." 💕</p>
+    </div>
+  </div>
+
+  <!-- Musik -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>

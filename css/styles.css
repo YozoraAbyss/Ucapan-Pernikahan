@@ -1,0 +1,188 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow: auto;
+    }
+
+    /* Marquee */
+    .marquee-box {
+      background: #fff0f6;
+      border-radius: 10px;
+      padding: 8px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+      color: #d6336c;
+      font-weight: bold;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0%); }
+      to { transform: translateX(-100%); }
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 30px;
+      text-align: center;
+      max-width: 600px;
+      animation: fadeIn 2s ease-in-out;
+      margin: 20px;
+    }
+
+    .card h1 {
+      color: #d6336c;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #d6336c;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: #a61e4d; }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      top: 0;
+      animation: fall linear forwards;
+      z-index: 1000;
+    }
+    @keyframes fall {
+      to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Galeri */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeBg 0.4s ease;
+    }
+    @keyframes fadeBg {
+      from { background: rgba(0,0,0,0); }
+      to { background: rgba(0,0,0,0.8); }
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+      animation: zoomIn 0.5s ease;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .lightbox .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .lightbox .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 15px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
+      user-select: none;
+    }
+    .lightbox .prev { left: 30px; }
+    .lightbox .next { right: 30px; }
+
+    /* Popup pesan */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 3000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: #fff0f6;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      text-align: center;
+      animation: zoomIn 0.4s ease;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .popup-content p {
+      font-size: 1.1rem;
+      color: #d6336c;
+      margin: 0;
+    }
+    .popup .close {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #a61e4d;
+    }
